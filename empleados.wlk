@@ -6,6 +6,7 @@ object galvan {
     sueldo=_sueldo
   }
   method sueldo() {
+    //metodo para guardar el sueldo
     return(sueldo)
   }
 }
