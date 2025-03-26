@@ -1,4 +1,3 @@
-//Escribir aqui los objetos
 object galvan {
     //uno de los empleados
   var sueldo = 15.000
@@ -50,6 +49,6 @@ object gimenez{
   //metodo de pago
   method pagarEmpleado (empleado){
     fondos = fondos - empleado.sueldo()
-    
+
   }
 }
