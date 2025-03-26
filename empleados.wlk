@@ -34,7 +34,7 @@ object baigorria  {
   }
   //metodo sueldo
   method sueldo(){
-    return self.costoEmpanada() * self.empanadasVendidas()
+    return costoEmpanada * empanadasVendidas
   }
 }
 object gimenez{
