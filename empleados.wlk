@@ -6,7 +6,7 @@ object galvan {
   }
   method sueldo() {
     //metodo para guardar el sueldo
-    return(sueldo)
+    return sueldo
   }
 }
 object baigorria  {
@@ -14,20 +14,20 @@ object baigorria  {
   var empanadasVendidas = 0
   //metodos de empanada
   method empanadasVendidas(){
-    return (empanadasVendidas)
+    return empanadasVendidas
   }
   method empanadasVendidas(_empanadasVendidas){
     empanadasVendidas = _empanadasVendidas
   }
   method vender_empanada(empanadas){
-    empanadasVendidas = self.empanadasVendidas + empanadas
+    empanadasVendidas = empanadasVendidas + empanadas
   }
   /* method venderEmpanada(){
     empanadasVendidas = self.empanadasVendidas + 1
   } */
   //metodos costoEmpanada
   method costoEmpanada(){
-    return (costoEmpanada)
+    return costoEmpanada
   }
   method costoEmpanada(_costoEmpanada){
     costoEmpanada = _costoEmpanada
@@ -40,7 +40,7 @@ object baigorria  {
 object gimenez{
   var fondos = 300000
   method fondos(){
-    return(fondos)
+    return fondos
   }
   method fondos(_fondos){
     fondos = _fondos
