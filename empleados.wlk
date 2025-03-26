@@ -1,6 +1,6 @@
 object galvan {
     //uno de los empleados
-  var sueldo = 15.000
+  var sueldo = 15000
   method sueldo(_sueldo) {
     sueldo=_sueldo
   }
@@ -34,11 +34,11 @@ object baigorria  {
   }
   //metodo sueldo
   method sueldo(){
-    return(self.costoEmpanada() * self.empanadasVendidas())
+    return self.costoEmpanada() * self.empanadasVendidas()
   }
 }
 object gimenez{
-  fondos = 300000
+  var fondos = 300000
   method fondos(){
     return(fondos)
   }
