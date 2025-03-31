@@ -19,12 +19,12 @@ object baigorria  {
   method empanadasVendidas(_empanadasVendidas){
     empanadasVendidas = _empanadasVendidas
   }
-  method vender_empanada(empanadas){
+  method vender(empanadas){
     empanadasVendidas = empanadasVendidas + empanadas
   }
-  /* method venderEmpanada(){
-    empanadasVendidas = self.empanadasVendidas + 1
-  } */
+   method vender(){
+    empanadasVendidas = empanadasVendidas + 1
+  } 
   //metodos costoEmpanada
   method costoEmpanada(){
     return costoEmpanada
@@ -38,18 +38,18 @@ object baigorria  {
   }
 }
 object gimenez{
-  var fondos = 300000
+  var fondo = 300000
   //metodos de fondos
-  method fondos(){
-    return fondos
+  method fondo(){
+    return fondo
   }
-  method fondos(_fondos){
-    fondos = _fondos
+  method fondo(_fondo){
+    fondo = _fondo
   }
 
   //metodo de pago
-  method pagarEmpleado (empleado){
-    fondos = fondos - empleado.sueldo()
+  method pagarSueldo (empleado){
+    fondo = fondo - empleado.sueldo()
 
   }
 }
