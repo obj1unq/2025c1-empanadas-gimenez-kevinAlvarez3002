@@ -1,67 +1,93 @@
 object galvan {
-    //uno de los empleados
+  //variables
   var sueldo = 15000
+  var deuda = 1
+  var dinero = 0
+  
+  //metodos de sueldo
   method sueldo(_sueldo) {
-    sueldo=_sueldo
+    sueldo = _sueldo
   }
-  method sueldo() {
-    //metodo para guardar el sueldo
-    return sueldo
+  
+  method sueldo() = sueldo
+  
+  //setters extra
+  method deuda() = deuda
+  
+  method dinero() = dinero
+  
+  method recibirSueldo() {
+    dinero += sueldo
+    self.corregirFinanzas()
   }
-  method recibirSueldo(_sueldo) {
-    
+  
+  method gastar(cantidad) {
+    dinero -= cantidad
+    self.corregirFinanzas()
+  }
+  
+  method corregirFinanzas() {
+    if (deuda <= dinero) {
+      dinero -= deuda
+      deuda = 0
+    } else {
+      deuda -= dinero
+      dinero = 0
+    }
   }
 }
-object baigorria  {
+
+object baigorria {
   var costoEmpanada = 15
   var empanadasVendidas = 0
   var totalCobrado = 0
+  
   //metodos de empanada
-  method empanadasVendidas(){
-    return empanadasVendidas
-  }
-  method empanadasVendidas(_empanadasVendidas){
+  method empanadasVendidas() = empanadasVendidas
+  
+  method empanadasVendidas(_empanadasVendidas) {
     empanadasVendidas = _empanadasVendidas
   }
-  method vender(empanadas){
-    empanadasVendidas = empanadasVendidas + empanadas
-  }
-   method vender(){
-    empanadasVendidas = empanadasVendidas + 1
-  } 
-  //metodos costoEmpanada
-  method costoEmpanada(){
-    return costoEmpanada
-  }
-  method costoEmpanada(_costoEmpanada){
-    costoEmpanada = _costoEmpanada
-  }
-  //metodo sueldo
-  method sueldo(){
-    return costoEmpanada * empanadasVendidas
-  }
-  method recibirSueldo(_sueldo){
-    totalCobrado = totalCobrado + _sueldo
-    empanadasVendidas = 0
-  }
-  method totalCobrado() {
-    return totalCobrado
+  
+  method vender(empanadas) {
+    empanadasVendidas += empanadas
   }
   
-}
-object gimenez{
-  var fondo = 300000
-  //metodos de fondos
-  method fondo(){
-    return fondo
+  method vender() {
+    empanadasVendidas += 1
   }
-  method fondo(_fondo){
+  
+  //metodos costoEmpanada
+  method costoEmpanada() = costoEmpanada
+  
+  method costoEmpanada(_costoEmpanada) {
+    costoEmpanada = _costoEmpanada
+  }
+  
+  //metodo sueldo
+  method sueldo() = costoEmpanada * empanadasVendidas
+  
+  method recibirSueldo() {
+    totalCobrado += self.sueldo()
+    empanadasVendidas = 0
+  }
+  
+  method totalCobrado() = totalCobrado
+}
+
+object gimenez {
+  var fondo = 300000
+  
+  //metodos de fondos
+  method fondo() = fondo
+  
+  method fondo(_fondo) {
     fondo = _fondo
   }
-
+  
   //metodo de pago
-  method pagarSueldo (empleado){
-    fondo = fondo - empleado.sueldo()
-    empleado.recibirSueldo(empleado.sueldo())
+  method pagarSueldo(empleado) {
+    fondo -= empleado.sueldo()
+    empleado.recibirSueldo()
   }
 }
