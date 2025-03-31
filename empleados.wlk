@@ -39,6 +39,7 @@ object baigorria  {
 }
 object gimenez{
   var fondos = 300000
+  //metodos de fondos
   method fondos(){
     return fondos
   }
