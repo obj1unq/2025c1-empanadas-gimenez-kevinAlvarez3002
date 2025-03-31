@@ -1,7 +1,7 @@
 object galvan {
   //variables
   var sueldo = 15000
-  var deuda = 1
+  var deuda = 0
   var dinero = 0
   
   //metodos de sueldo
