@@ -8,10 +8,14 @@ object galvan {
     //metodo para guardar el sueldo
     return sueldo
   }
+  method recibirSueldo(_sueldo) {
+    
+  }
 }
 object baigorria  {
   var costoEmpanada = 15
   var empanadasVendidas = 0
+  var totalCobrado = 0
   //metodos de empanada
   method empanadasVendidas(){
     return empanadasVendidas
@@ -36,6 +40,14 @@ object baigorria  {
   method sueldo(){
     return costoEmpanada * empanadasVendidas
   }
+  method recibirSueldo(_sueldo){
+    totalCobrado = totalCobrado + _sueldo
+    empanadasVendidas = 0
+  }
+  method totalCobrado() {
+    return totalCobrado
+  }
+  
 }
 object gimenez{
   var fondo = 300000
@@ -50,6 +62,6 @@ object gimenez{
   //metodo de pago
   method pagarSueldo (empleado){
     fondo = fondo - empleado.sueldo()
-
+    empleado.recibirSueldo(empleado.sueldo())
   }
 }
