@@ -1,8 +1,8 @@
 object galvan {
   //variables
   var sueldo = 15000
-  var deuda = 0
-  var dinero = 0
+  //var deuda = 0
+  var fondo = 0
   
   //metodos de sueldo
   method sueldo(_sueldo) {
@@ -12,29 +12,29 @@ object galvan {
   method sueldo() = sueldo
   
   //setters extra
-  method deuda() = deuda
+  method deuda() = fondo.min(0).abs()
   
-  method dinero() = dinero
+  method fondo() = fondo.max(0)
   
   method recibirSueldo() {
-    dinero += sueldo
-    self.corregirFinanzas()
+    fondo += sueldo
+    //self.corregirFinanzas()
   }
   
   method gastar(cantidad) {
-    dinero -= cantidad
-    self.corregirFinanzas()
+    fondo -= cantidad
+    //self.corregirFinanzas()
   }
   
-  method corregirFinanzas() {
-    if (deuda <= dinero) {
-      dinero -= deuda
+ /* method corregirFinanzas() {
+    if (deuda <= fondo) {
+      fondo -= deuda
       deuda = 0
     } else {
-      deuda -= dinero
-      dinero = 0
+      deuda -= fondo
+      fondo = 0
     }
-  }
+  }*/
 }
 
 object baigorria {
