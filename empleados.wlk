@@ -14,7 +14,7 @@ object galvan {
   //setters extra
   method deuda() = fondo.min(0).abs()
   
-  method fondo() = fondo.max(0)
+  method dinero() = fondo.max(0)
   
   method recibirSueldo() {
     fondo += sueldo
